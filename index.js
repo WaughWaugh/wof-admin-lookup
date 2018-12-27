@@ -7,6 +7,7 @@ const _ = require('lodash');
 const os = require('os');
 
 function create(layers) {
+  console.log("My own admin lookup");
   if (peliasConfig.imports.adminLookup.enabled) {
     return require('./src/lookupStream')(resolver(layers),
       peliasConfig.imports.adminLookup);

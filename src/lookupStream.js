@@ -5,6 +5,7 @@ const parallelTransform = require('parallel-transform');
 const logger = require( 'pelias-logger' ).get( 'wof-admin-lookup' );
 const getAdminLayers = require( './getAdminLayers' );
 const usePostalCity = require( './usePostalCity' );
+const useCityHierarchies = require ('./useCityHierarchies');
 
 function hasAnyMultiples(result) {
   return Object.keys(result).some((element) => {
@@ -74,6 +75,10 @@ function createPipResolverStream(pipResolver, config) {
       // optionally enable/disable this functionality using config variable.
       if( config && true === config.usePostalCities ){
         usePostalCity( result, doc );
+      }
+
+      if( config && true === config.useCityHierarchies) {
+        useCityHierarchies( result, doc);
       }
 
       callback(null, doc);
