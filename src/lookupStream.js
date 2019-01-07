@@ -70,15 +70,24 @@ function createPipResolverStream(pipResolver, config) {
 
         }
       );
+ 
+      console.log("After PIP");
+      console.log(JSON.stringify(doc, null, 2));
 
       // prefer a 'postal city' locality when a valid postal code is available
       // optionally enable/disable this functionality using config variable.
       if( config && true === config.usePostalCities ){
         usePostalCity( result, doc );
+	console.log("After Postal cities lookup");
+        console.log(JSON.stringify(doc, null, 2));
+
       }
 
       if( config && true === config.useCityHierarchies) {
         useCityHierarchies( result, doc);
+	console.log("After city hierarchy lookup");
+        console.log(JSON.stringify(doc, null, 2));
+
       }
 
       callback(null, doc);

@@ -7,11 +7,19 @@ function addParentsFromMeta( doc, meta ) {
   if( doc.hasMeta(meta) ) {
     var metaValue = doc.getMeta(meta);
     
-    placeholder.search( metaValue, 'locality', function( results ) {
-        results.forEach( function( result ) {
-           doc.addParent(result.placetype, result.name, result.id.toString(), result.abbr, true);
-        });
-    });
+    if( metaValue != null && metaValue.length > 0 ) {
+	 console.log("Meta: " + meta + ", Value: " + metaValue);
+	
+    	 placeholder.search( metaValue, 'locality', function( results ) {
+		console.log("Adding additional parents from city hierarchy");
+		console.log(JSON.stringify(results, null, 2));
+        	results.forEach( function( result ) {
+		   if( result != null ) {
+	             doc.addParent(result.placetype, result.name, result.id.toString(), result.abbr, true);
+		   }
+        	});
+    	});
+    }
   }
 }
 
