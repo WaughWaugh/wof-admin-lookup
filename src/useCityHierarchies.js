@@ -20,7 +20,10 @@ function addParentsFromMeta( doc, meta, positionParams ) {
 		     console.log(JSON.stringify(result, null, 2));
 
 	             doc.addParent(result.placetype, result.name, result.id.toString(), result.abbr, positionParams);
-		   }
+		   } else {
+		     console.log("Rejected parent");
+		     console.log(JSON.stringify( result, null, 2 ));
+	 	   }
         	});
     	});
     }
