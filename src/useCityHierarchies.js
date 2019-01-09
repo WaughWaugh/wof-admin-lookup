@@ -3,7 +3,7 @@ const logger = peliasLogger.get('wof-admin-lookup');
 
 var placeholder = require('pelias-placeholder');
 
-var allowedPlaceTypes = ['continent', 'ocean', 'empire', 'country', 'dependency', 'marinearea', 'macroregion', 'region', 'macrocounty', 'county', 'locality', 'borough', 'localadmin', 'neighbourhood', 'postalcode'];
+var allowedPlaceTypes = ['continent', 'ocean', 'empire', 'country', 'dependency', 'marinearea', 'macroregion', 'region', 'macrocounty', 'county', 'locality', 'borough', 'localadmin'];
 
 function addParentsFromMeta( doc, meta, positionParams ) {
   if( doc.hasMeta(meta) ) {
