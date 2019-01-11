@@ -84,7 +84,11 @@ function createPipResolverStream(pipResolver, config) {
       }
 
       if( config && true === config.useCityHierarchies) {
-        useCityHierarchies( result, doc);
+        try {
+           useCityHierarchies( result, doc);
+        } catch( err ) {
+          console.error("useCityHierarchies " + err);
+        }
 	console.log("After city hierarchy lookup");
         console.log(JSON.stringify(doc, null, 2));
 
