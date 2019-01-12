@@ -237,3 +237,9 @@ function handleResults(msg) {
     }
   }
 }
+
+function getWofData( id ) {
+   return wofData[parseInt(id)];
+}
+
+module.exports.getWofData = getWofData;
