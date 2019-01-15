@@ -48,7 +48,7 @@ function useCityHierarchies(res, doc) {
           doc.addParent(wofAdmin.Placetype, wofAdmin.Name, wofAdmin.Id.toString(), wofAdmin.Abbrev, params );
       }
 
-      if (wofAdmin.Hierarchy) {
+      if (wofAdmin.Hierarchy && wofAdmin.Hierarchy.length > 0) {
         var parents = _.compact(wofAdmin.Hierarchy[0].map(id => wofLookup.getWofData(id)));
         console.log("Parents " + JSON.stringify(parents, null, 2));
 
