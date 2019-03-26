@@ -33,7 +33,7 @@
     "pelias-logger": "^1.2.1",
     "pelias-microservice-wrapper": "^1.2.1",
     "pelias-placeholder": "file:../placeholder",
-    "pelias-whosonfirst": "^2.22.4",
+    "pelias-whosonfirst": "^2.32.0",
     "polygon-lookup": "^2.1.0",
     "request": "^2.83.0",
     "simplify-js": "^1.2.1",
@@ -54,7 +54,7 @@
     "precommit-hook": "^3.0.0",
     "proxyquire": "^2.0.0",
     "tap-dot": "^2.0.0",
-    "tape": "^4.2.2",
+    "tape": "^4.10.1",
     "temp": "^0.9.0"
   },
   "author": "mapzen",
